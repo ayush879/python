@@ -1,0 +1,88 @@
+import pandas as pd
+#print('hello')
+#pd.series(data,index,dtype,copy)
+obj=pd.Series([4,2,3,-3])
+print(obj)
+print(type(obj))
+print("series values")
+print(obj.values)
+print("series index")
+print(obj.index)
+print(obj[3])
+obj= pd.Series([4,2,3,-3],index=['d','b','c','a'])
+print(obj)
+sdata={'banglore':5600000,'mysore':2400000,'manglore':340000,"hassan":898978}
+obj=pd.Series(sdata)
+print(obj.values)
+print(obj.index)
+cities=['chikamagalur','banglore','manglore','mysore']
+obj=pd.Series(sdata,index=cities)
+print(obj)
+obj['cochin']=23456789
+print(obj)
+#pd.DataFrame(data,index,columns,dtyoe,copy)
+print()
+data={'city':['banglore','banglore','banglore','manglore','manglore','manglore'],'year':[1991,2001,2011,1991,2001,2002],'population':[4876532,6537124,9621555,1574894,46744898,75895959]}
+frame=pd.DataFrame(data)
+print(type(frame))
+print(frame.head())
+print(frame.tail())
+print(pd.DataFrame(data,columns=['year','population','city']))
+data=[1,2,3,4,5]
+df=pd.DataFrame(data)
+print(df)
+data=[['alex',10],['bob',12],['clarke',13]]
+df=pd.DataFrame(data,columns=['name','age'])
+print(df)
+df=pd.DataFrame(data,columns=['age','name'])
+print(df)
+df=pd.DataFrame(data,columns=['name','age'],dtype=float)
+print(df)
+data1=[{'a':1,'b':2},{'a':5,'b':10,'c':20}]
+df=pd.DataFrame(data1)
+print(df)
+data=[{'a':1,'b':2},{'a':5,'b':10,'c':20}]
+df1=pd.DataFrame(data,index=['first','second'],columns=['a','b'])
+df2=pd.DataFrame(data,index=['first','second'],columns=['a','b1'])
+print(df1)
+print(df2)
+print(df.T)
+import numpy as np
+#create a dtatframe consist of following sets first one name, next age, dependents bool value
+data={'name':['ayush','kalyan','vijay','rahul','shubham','rexibond','atul','akash','harshit','karthik'],'age':[23,np.nan,np.nan,26,27,28,29,30,31,32],'dependents':[True,False,True,False,True,False,True,False,True,False]}
+df=pd.DataFrame(data)
+print(df)
+print("COUNT")
+print(df.count())
+print(df.count(axis='columns'))
+print(df.set_index(["name","dependents"]).count(level="name"))
+#name marks1 marks2 marks3 
+data={'name':['ayush','kalyan','vijay','rahul','shubham'],'marks1':[90,89,78,67,56],'marks2':[90,89,98,87,76],'marks3':[89,78,88,99,77]}
+df=pd.DataFrame(data)
+print(df)
+print(df.sum())
+#print(df.sum(axis=0))
+print(df.sum(axis=1))
+#print(df.sum(axis=2))
+print(df.loc[:,"marks1"].sum())
+print(df.loc[:,"marks2"].sum())
+print(df.loc[:,"marks3"].sum())
+print(df.mean())
+print(df.median())
+print(df.mode())
+print(df.loc[:,"marks1"].mean())
+print(df.loc[:,"marks1"].median())
+print(df.loc[:,"marks1"].mode())
+#maximum marks in each subject minimum / for each student get min max marks
+print(df.loc[:,"marks1"].max())
+print(df.loc[:,"marks2"].max())
+print(df.loc[:,"marks3"].max())
+print(df.loc[:,"marks1"].min())
+print(df.loc[:,"marks2"].min())
+print(df.loc[:,"marks3"].min())
+print()
+s=pd.Series(["a","b","c","a"],dtype="category")
+print(s)
+#pd.Categorical
+cat=pd.Categorical(['a','b','c','a','b','c','a','a','d'])
+print(cat)

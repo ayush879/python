@@ -1,0 +1,11 @@
+import numpy as np 
+arr=np.random.randn(100)
+sumofpos=(arr>0).sum()
+sumofneg=(arr<0).sum()
+print(arr)
+print("postive number is",sumofpos)
+print("negative number is",sumofneg)
+boolarr=np.where((arr<0),True,False)
+print(boolarr)
+print(boolarr.any())
+print(boolarr.all())

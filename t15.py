@@ -1,0 +1,13 @@
+from tkinter import *
+top=Tk()
+Lb1=Listbox(top,selectmode=BROWSE)
+Lb1.insert(1,"Python")
+Lb1.insert(2,"Perl")
+Lb1.insert(3,"c")
+Lb1.insert(4,"php")
+Lb1.insert(5,"jsp")
+Lb1.insert(6,"ruby")
+Lb1.insert(7,"nodes")
+Lb1.insert(8,"angular")
+Lb1.pack()
+top.mainloop()

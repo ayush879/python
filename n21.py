@@ -1,0 +1,11 @@
+import numpy as np 
+arr=np.arange(15).reshape((3,5))
+print(arr)
+print(arr.T)
+print(np.dot(arr,arr.T))
+arr=np.arange(16).reshape((2,2,4))
+print(arr)
+print(arr.transpose((1,0,2)))
+arr=np.array([[0,1,2],[3,4,5],[6,7,8]])
+print(arr)
+print(arr.transpose(1,0))

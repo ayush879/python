@@ -1,0 +1,13 @@
+import numpy as np 
+array=np.arange(8)
+print("original array:\n",array)
+array=np.arange(8).reshape(2,4)
+print("\n array reshaped with 2 rows and 4 columns:\n",array)
+array=np.arange(8).reshape(2,2,2)
+print("\noriginal array reshaped to 3D:\n",array)
+ar=np.arange(8)
+print(ar)
+print(np.shape(ar))
+print(np.ndim(ar))
+print(ar.dtype)
+print(ar.size)

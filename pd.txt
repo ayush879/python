@@ -1,0 +1,7 @@
+axes 
+dtype
+empty
+ndim
+shape
+#tkinter
+plt.

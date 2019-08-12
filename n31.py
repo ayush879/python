@@ -1,0 +1,21 @@
+import pandas as pd 
+import numpy as np 
+df=pd.DataFrame({"person":["john","myla",None,"john","myla"],"Age":[24,np.nan,
+21.,33,26],"Dependents":[False,True,True,True,False]})
+print(df)
+print("COUNT")
+print(df.count())
+print("COUNTS FOR EACH ROW")
+print(df.count(axis='columns'))
+print("COUNTS FOR ONE LEVEL OF A MULTINDEX")
+print(df.set_index(["person","Dependents"]).count(level="person"))
+print("SUM")
+print("SUM OF EMPTY SERIES")
+print(pd.Series([]).sum())
+print("SUM OF SERIES WITH MIN COUNT ")
+print(pd.Series([]).sum(min_count=1))
+print("SUM ROW WISE")
+print(df.sum(axis='rows'))
+print(" SUM OF SKIPPED NA VALUES")
+print(pd.Series([np.nan]).sum())
+print(pd.Series([np.nan]).sum(min_count=1))
